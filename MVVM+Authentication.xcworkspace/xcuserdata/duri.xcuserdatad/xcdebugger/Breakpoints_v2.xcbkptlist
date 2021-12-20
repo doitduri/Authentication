@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "F366C70F-872C-4896-A48C-1A6906A7F292"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "212613E2-9332-4910-8C78-9BA543469914"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MVVM+Authentication/Service/UserService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "9"
+            endingLineNumber = "9"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "65E5155F-8121-4CC9-BADD-6FF11858A38D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MVVM+Authentication/Model/SignIn.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "SignInRequest"
+            landmarkType = "14">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0E1E307C-BFE2-4F53-8217-06C62B5DF378"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MVVM+Authentication/Service/UserService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "10"
+            endingLineNumber = "10"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "278C3968-ED32-4D43-ABA4-144329CBD2BC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MVVM+Authentication/Modules/Auth/AuthView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "AuthView"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "278C3968-ED32-4D43-ABA4-144329CBD2BC - f6f4e0ff7c4115a0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MVVM_Authentication.AuthView.emailField.getter : __C.UITextField"
+                  moduleName = "MVVM+Authentication"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/duri/Documents/GitHub/MVVM+Authentication/MVVM+Authentication/Modules/Auth/AuthView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "278C3968-ED32-4D43-ABA4-144329CBD2BC - c2e7d2a95c1efdb8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MVVM_Authentication.AuthView.emailField.setter : __C.UITextField"
+                  moduleName = "MVVM+Authentication"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/duri/Documents/GitHub/MVVM+Authentication/MVVM+Authentication/Modules/Auth/AuthView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "128">
+               </Location>
+               <Location
+                  uuid = "278C3968-ED32-4D43-ABA4-144329CBD2BC - 981b8727b1496212"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MVVM_Authentication.AuthView.emailField.modify : __C.UITextField"
+                  moduleName = "MVVM+Authentication"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/duri/Documents/GitHub/MVVM+Authentication/MVVM+Authentication/Modules/Auth/AuthView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "278C3968-ED32-4D43-ABA4-144329CBD2BC - 85d1bedfe5b73ded"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MVVM_Authentication.AuthView.emailField.modify : __C.UITextField with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "MVVM+Authentication"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/duri/Documents/GitHub/MVVM+Authentication/MVVM+Authentication/Modules/Auth/AuthView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "278C3968-ED32-4D43-ABA4-144329CBD2BC - 53656da6f7566db8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MVVM_Authentication.AuthView.init(frame: __C.CGRect) -&gt; MVVM_Authentication.AuthView"
+                  moduleName = "MVVM+Authentication"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/duri/Documents/GitHub/MVVM+Authentication/MVVM+Authentication/Modules/Auth/AuthView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "116">
+               </Location>
+               <Location
+                  uuid = "278C3968-ED32-4D43-ABA4-144329CBD2BC - 77d67216c123f0e6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MVVM_Authentication.AuthView.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;MVVM_Authentication.AuthView&gt;"
+                  moduleName = "MVVM+Authentication"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/duri/Documents/GitHub/MVVM+Authentication/MVVM+Authentication/Modules/Auth/AuthView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "80">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BDEC8218-B58C-4ACD-BE69-463FB453E6EF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MVVM+Authentication/Modules/Auth/AuthViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "Input"
+            landmarkType = "14">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
