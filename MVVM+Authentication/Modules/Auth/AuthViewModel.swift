@@ -18,8 +18,8 @@ class AuthViewModel: BaseViewModel {
     
     struct Input {
         let tapLoginButton = PublishSubject<Void>()
-        let emailTextField = BehaviorRelay<String>(value: "")
-        let passwordTextFiled = BehaviorRelay<String>(value: "")
+        let emailTextField = PublishSubject<String>(value: "")
+        let passwordTextFiled = PublishSubject<String>(value: "")
     }
     
     struct Output {

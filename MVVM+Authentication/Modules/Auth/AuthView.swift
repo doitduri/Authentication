@@ -6,30 +6,40 @@
 //
 
 import UIKit
+import Then
 
 class AuthView: BaseView {
     
-    var emailField = UITextField()
-    var passwordField = UITextField()
+    private let emailView = UIView().then {
+           $0.layer.cornerRadius = 15
+           $0.layer.borderWidth = 1
+       }
+
+    let emailField = UITextField().then {
+        $0.placeholder = "이메일을 입력해주세요."
+        $0.keyboardType = .emailAddress
+        $0.textColor = .black
+        $0.returnKeyType = .go
+    }
     
-    var loginButton = UIButton()
     
+    let passwordField = UITextField().then {
+        $0.placeholder = "비밀번호를 입력하세요."
+        $0.isSecureTextEntry = true
+        $0.textColor = .black
+        $0.returnKeyType = .done
+    }
+    
+    
+    let loginButton = UIButton().then {
+        $0.setTitle("로그인", for: .normal)
+        $0.setTitleColor(.white, for: .normal)
+        $0.backgroundColor = .black
+        $0.layer.cornerRadius = 10
+    }
     
     override func setup() {
         self.backgroundColor = .white
-        
-        self.emailField.placeholder = "이메일을 입력해주세요."
-        self.emailField.keyboardType = .emailAddress
-        self.emailField.textColor = .black
-        
-        self.passwordField.placeholder = "비밀번호를 입력하세요."
-        self.passwordField.isSecureTextEntry = true
-        self.passwordField.textColor = .black
-        
-        self.loginButton.setTitle("로그인", for: .normal)
-        self.loginButton.setTitleColor(.white, for: .normal)
-        self.loginButton.backgroundColor = .black
-        self.loginButton.layer.cornerRadius = 10
         
         [emailField, passwordField, loginButton].forEach {
             self.addSubview($0)
@@ -41,7 +51,8 @@ class AuthView: BaseView {
         // snp views
         
         emailField.snp.makeConstraints {
-            $0.center.equalToSuperview()
+            $0.top.equalToSuperview().offset(200)
+            $0.centerX.equalToSuperview()
         }
         
         passwordField.snp.makeConstraints {

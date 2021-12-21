@@ -13,7 +13,6 @@ class SplashView: BaseView {
     let titleLabel = UILabel()
     
     override func setup() {
-        self.backgroundColor = .white
         titleLabel.text = "SGS durikim"
         titleLabel.textColor = .black
         
