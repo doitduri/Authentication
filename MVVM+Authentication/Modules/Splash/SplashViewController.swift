@@ -9,59 +9,71 @@ import UIKit
 import RxSwift
 
 class SplashViewConroller: BaseViewController {
+  private let splashView = SplashView()
+  private let viewModel = SplashViewModel(
+    userDefaults: UserDefaultsUtil(),
+    userService: UserSerivce()
+  )
+
+  static func instance() -> SplashViewConroller {
+    return SplashViewConroller.init(nibName: nil, bundle: nil)
+  }
+
+  override func loadView() {
+    super.view = self.splashView
+  }
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+
+    self.viewModel.input.viewDidLoad.onNext(())
+
+    /* RxViewController
+     self.rx.viewDidLoad
+     .subscribe(onNext: {
+     print("viewDidLoad 🎉")
+     })
+     */
+
+  }
+
+  override func bindViewModel() {
+    /*
+    self.rx.viewDidLoad
+    .subscribe(onNext: {
+    print("viewDidLoad 🎉")
+    }) */
     
-    private let splashView = SplashView()
-    private let viewModel = SplashViewModel(
-        userDefaults: UserDefaultsUtil(),
-        userService: UserSerivce()
-    )
+    self.viewModel.input.viewDidLoad
+      .subscribe { _ in
+        self.viewModel.validateToken()
+      }
+      .disposed(by: disposeBag)
+
+    self.viewModel.output.goToSignIn
+      .debug()
+      .subscribe(onNext: { _ in
+        self.goToSignIn()
+      }).disposed(by: disposeBag)
+
+    self.viewModel.output.goToMain
+      .asDriver(onErrorJustReturn: ())
+      .drive(onNext: self.goToMain)
+      .disposed(by: self.disposeBag)
+  }
+
     
-    static func instance() -> SplashViewConroller {
-        return SplashViewConroller.init(nibName: nil, bundle: nil)
+    // MARK: 네비게이터로 분리 하기
+  func goToMain() {
+    if let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
+      sceneDelegate.goToMain()
     }
-    
-    override func loadView() {
-        super.view = self.splashView
+  }
+
+  func goToSignIn() {
+    if let scenceDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
+      scenceDelegate.goToSignIn()
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.viewModel.input.viewDidLoad.on(.next(()))
-    }
-    
-    override func bindViewModel() {
-        self.viewModel.output.goToSignIn
-            .debug()
-            .subscribe(onNext: { _ in
-                self.goToSignIn()
-            }, onError: { _ in
-                print("error")
-            }, onCompleted: {
-                print("completed")
-            }, onDisposed: {
-                print("disposed")
-            })
-            .disposed(by: disposeBag)
-        
-        self.viewModel.output.goToMain
-            .asDriver(onErrorJustReturn: ())
-            .drive(onNext: self.goToMain)
-            .disposed(by: self.disposeBag)
-    }
-    
-    func goToMain() {
-        print("goToMain")
-        if let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
-            sceneDelegate.goToMain()
-        }
-    }
-    
-    func goToSignIn() {
-        print("goToSignIn")
-        if let scenceDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
-            scenceDelegate.goToSignIn()
-        }
-    }
-    
+  }
+
 }

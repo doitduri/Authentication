@@ -7,4 +7,5 @@ target 'MVVM+Authentication' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'Alamofire'
-end e
+  pod 'Then'
+end 

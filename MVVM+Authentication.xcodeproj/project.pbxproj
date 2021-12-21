@@ -160,8 +160,8 @@
 		C19816A62768484D00BCB2CB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				C18F0E3527682C2800FE8B75 /* Auth */,
 				C19816AB2768602700BCB2CB /* Splash */,
+				C18F0E3527682C2800FE8B75 /* Auth */,
 				C19816BE27686D2300BCB2CB /* Home */,
 			);
 			path = Modules;

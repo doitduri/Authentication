@@ -31,29 +31,23 @@ class SplashViewModel: BaseViewModel {
         self.userDefaults = userDefaults
         self.userService = userService
         super.init()
-        print("1. viewModel - bind")
+        
         self.input.viewDidLoad
-            .onNext({
-                self.validateToken()
-            }())
+            .onNext(self.validateToken())
     }
     
-    private func validateToken() {
-        print("2. validateToken")
+    func validateToken() {
         let token = self.userDefaults.getUserToken()
         
         if self.validateTokenFromLocal(token: token) {
-            print("local")
             self.validateTokenFromServer()
         } else {
             // 토큰 없을 떄
-            print("3. go to signin")
             self.output.goToSignIn.accept(())
-            
         }
     }
     
-    private func validateTokenFromLocal(token: String) -> Bool {
+    func validateTokenFromLocal(token: String) -> Bool {
         return !token.isEmpty
     }
     
