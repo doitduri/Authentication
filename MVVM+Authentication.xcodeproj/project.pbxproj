@@ -30,6 +30,7 @@
 		C19816BB27686ADE00BCB2CB /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19816BA27686ADE00BCB2CB /* Utils.swift */; };
 		C19816BD27686D1F00BCB2CB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19816BC27686D1F00BCB2CB /* HomeViewController.swift */; };
 		C19816C0276880AD00BCB2CB /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19816BF276880AD00BCB2CB /* UserInfo.swift */; };
+		C1D47E8B2772076B00DBA3CA /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D47E8A2772076A00DBA3CA /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		C19816BA27686ADE00BCB2CB /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		C19816BC27686D1F00BCB2CB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C19816BF276880AD00BCB2CB /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		C1D47E8A2772076A00DBA3CA /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,9 +122,9 @@
 		C18F0E1E276828EF00FE8B75 /* MVVM+Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				C19816A62768484D00BCB2CB /* Modules */,
 				C19816B9276865CB00BCB2CB /* Model */,
 				C19816B6276863E200BCB2CB /* Service */,
-				C19816A62768484D00BCB2CB /* Modules */,
 				C18F0E3827682CC300FE8B75 /* Base */,
 				C18F0E1F276828EF00FE8B75 /* AppDelegate.swift */,
 				C18F0E21276828EF00FE8B75 /* SceneDelegate.swift */,
@@ -197,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				C19816BC27686D1F00BCB2CB /* HomeViewController.swift */,
+				C1D47E8A2772076A00DBA3CA /* HomeViewModel.swift */,
 				C14D3AA9276F9B30009599D2 /* HomeView.swift */,
 				C14D3AAD276F9CA9009599D2 /* Views */,
 			);
@@ -332,6 +335,7 @@
 				C19816AA2768602400BCB2CB /* SplashViewController.swift in Sources */,
 				C19816B8276865BF00BCB2CB /* SignIn.swift in Sources */,
 				C14D3AA4276DEE4B009599D2 /* Signup.swift in Sources */,
+				C1D47E8B2772076B00DBA3CA /* HomeViewModel.swift in Sources */,
 				C14D3AA6276F7DD7009599D2 /* AuthView.swift in Sources */,
 				C19816B32768610500BCB2CB /* UserDefaultsUtil.swift in Sources */,
 				C19816AD2768609F00BCB2CB /* SplashView.swift in Sources */,

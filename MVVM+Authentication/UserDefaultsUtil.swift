@@ -25,7 +25,6 @@ struct UserDefaultsUtil {
     }
     
     func getUserToken() -> String {
-        print("UserDefaultsUtil- getUserToken")
         return self.instance.string(forKey: UserDefaultsUtil.KEY_TOKEN) ?? ""
     }
     

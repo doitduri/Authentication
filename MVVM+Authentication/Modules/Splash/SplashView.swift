@@ -15,6 +15,7 @@ class SplashView: BaseView {
     override func setup() {
         self.backgroundColor = .white
         titleLabel.text = "SGS durikim"
+        titleLabel.textColor = .black
         
         self.addSubview(titleLabel)
     }

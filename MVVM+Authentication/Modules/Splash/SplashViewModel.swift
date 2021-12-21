@@ -15,7 +15,8 @@ class SplashViewModel: BaseViewModel {
     let userService: UserServiceProtocol
     
     struct Input {
-      let viewDidLoad = PublishSubject<Void>()
+        let viewDidLoad = PublishSubject<Void>()
+        // RxViewController,
     }
     
     struct Output {
@@ -30,26 +31,26 @@ class SplashViewModel: BaseViewModel {
         self.userDefaults = userDefaults
         self.userService = userService
         super.init()
-    }
-    
-    override func bind() {
-        print("viewModel- bind")
+        print("1. viewModel - bind")
         self.input.viewDidLoad
-            .subscribe(onNext: { [weak self] in
-                self?.validateToken()
-            })
-            .disposed(by: disposeBag)
+            .onNext({
+                self.validateToken()
+            }())
     }
-    
     
     private func validateToken() {
+        print("2. validateToken")
         let token = self.userDefaults.getUserToken()
         
         if self.validateTokenFromLocal(token: token) {
             print("local")
             self.validateTokenFromServer()
         } else {
-            self.output.goToSignIn.accept(())        }
+            // 토큰 없을 떄
+            print("3. go to signin")
+            self.output.goToSignIn.accept(())
+            
+        }
     }
     
     private func validateTokenFromLocal(token: String) -> Bool {
@@ -57,12 +58,10 @@ class SplashViewModel: BaseViewModel {
     }
     
     private func validateTokenFromServer() {
-        print("validateTokenFromServer")
-        
-//        TODO 토큰
+        // 토큰 있을 때 - 토큰 서버처리
         self.userService.fetchUserInfo()
             .do(onNext: { response in
-               print(response)
+                print(response)
             })
             .map {_ in Void()}
             .subscribe(

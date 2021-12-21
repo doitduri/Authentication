@@ -20,9 +20,11 @@ class AuthView: BaseView {
         
         self.emailField.placeholder = "이메일을 입력해주세요."
         self.emailField.keyboardType = .emailAddress
+        self.emailField.textColor = .black
         
         self.passwordField.placeholder = "비밀번호를 입력하세요."
         self.passwordField.isSecureTextEntry = true
+        self.passwordField.textColor = .black
         
         self.loginButton.setTitle("로그인", for: .normal)
         self.loginButton.setTitleColor(.white, for: .normal)
