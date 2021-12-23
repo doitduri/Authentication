@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class AuthViewController: BaseViewController {
     private let authView = AuthView()
@@ -14,9 +16,10 @@ class AuthViewController: BaseViewController {
         userService: UserSerivce()
     )
     
-    static func instance() -> UINavigationController {
-        let controller = AuthViewController(nibName: nil, bundle: nil)
-        return UINavigationController(rootViewController: controller)
+    weak var coordinator: MainCoordinator?
+    
+    static func instance() -> AuthViewController {
+        return AuthViewController(nibName: nil, bundle: nil)
     }
     
     override func loadView() {
@@ -30,17 +33,21 @@ class AuthViewController: BaseViewController {
     
     override func bindViewModel() {
         
-        self.viewModel.output.goToMain
-            .asDriver(onErrorJustReturn: ())
-            .drive(onNext: self.goToMain)
+        self.authView.loginButton.rx.tap
+            .bind(to: self.viewModel.input.tapLoginButton)
             .disposed(by: disposeBag)
+        
+        //        self.viewModel.output.goToMain
+        //            .asDriver(onErrorJustReturn: ())
+        //            .drive(onNext: self.goToMain)
+        //            .disposed(by: disposeBag)
     }
     
     private func goToMain() {
         print("goToMain")
-        if let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
-            sceneDelegate.goToMain()
-        }
+        //        if let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
+        //            sceneDelegate.goToMain()
+        //        }
     }
     
 }

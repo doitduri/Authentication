@@ -14,6 +14,8 @@ class HomeViewController: BaseViewController {
         userDefaults: UserDefaultsUtil()
     )
     
+    weak var coordinator: MainCoordinator?
+    
     static func instance() -> HomeViewController {
         return HomeViewController(nibName: nil, bundle: nil)
     }

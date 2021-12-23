@@ -14,7 +14,6 @@
 		C14D3AAA276F9B30009599D2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14D3AA9276F9B30009599D2 /* HomeView.swift */; };
 		C14D3AAC276F9CA4009599D2 /* HomeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14D3AAB276F9CA4009599D2 /* HomeListCell.swift */; };
 		C18F0E20276828EF00FE8B75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F0E1F276828EF00FE8B75 /* AppDelegate.swift */; };
-		C18F0E22276828EF00FE8B75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F0E21276828EF00FE8B75 /* SceneDelegate.swift */; };
 		C18F0E29276828F100FE8B75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C18F0E28276828F100FE8B75 /* Assets.xcassets */; };
 		C18F0E2C276828F100FE8B75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C18F0E2A276828F100FE8B75 /* LaunchScreen.storyboard */; };
 		C18F0E34276829D000FE8B75 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F0E33276829D000FE8B75 /* AuthViewController.swift */; };
@@ -31,6 +30,9 @@
 		C19816BD27686D1F00BCB2CB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19816BC27686D1F00BCB2CB /* HomeViewController.swift */; };
 		C19816C0276880AD00BCB2CB /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19816BF276880AD00BCB2CB /* UserInfo.swift */; };
 		C1D47E8B2772076B00DBA3CA /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D47E8A2772076A00DBA3CA /* HomeViewModel.swift */; };
+		C1D47EAF27741BF500DBA3CA /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D47EAE27741BF500DBA3CA /* AuthCoordinator.swift */; };
+		C1D47EB327742CEA00DBA3CA /* Coodinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D47EB227742CEA00DBA3CA /* Coodinator.swift */; };
+		C1D47EB527742D1A00DBA3CA /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D47EB427742D1A00DBA3CA /* MainCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +46,6 @@
 		C14D3AAB276F9CA4009599D2 /* HomeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListCell.swift; sourceTree = "<group>"; };
 		C18F0E1C276828EF00FE8B75 /* MVVM+Authentication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVVM+Authentication.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C18F0E1F276828EF00FE8B75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C18F0E21276828EF00FE8B75 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C18F0E28276828F100FE8B75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C18F0E2B276828F100FE8B75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C18F0E2D276828F100FE8B75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -62,6 +63,9 @@
 		C19816BC27686D1F00BCB2CB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C19816BF276880AD00BCB2CB /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		C1D47E8A2772076A00DBA3CA /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		C1D47EAE27741BF500DBA3CA /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		C1D47EB227742CEA00DBA3CA /* Coodinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coodinator.swift; sourceTree = "<group>"; };
+		C1D47EB427742D1A00DBA3CA /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,15 +126,12 @@
 		C18F0E1E276828EF00FE8B75 /* MVVM+Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				C1D47EB127742C2500DBA3CA /* Commons */,
+				C1D47EB027742C0F00DBA3CA /* Coordinator */,
 				C19816A62768484D00BCB2CB /* Modules */,
 				C19816B9276865CB00BCB2CB /* Model */,
 				C19816B6276863E200BCB2CB /* Service */,
 				C18F0E3827682CC300FE8B75 /* Base */,
-				C18F0E1F276828EF00FE8B75 /* AppDelegate.swift */,
-				C18F0E21276828EF00FE8B75 /* SceneDelegate.swift */,
-				C18F0E28276828F100FE8B75 /* Assets.xcassets */,
-				C18F0E2A276828F100FE8B75 /* LaunchScreen.storyboard */,
-				C18F0E2D276828F100FE8B75 /* Info.plist */,
 				C19816B22768610500BCB2CB /* UserDefaultsUtil.swift */,
 				C19816BA27686ADE00BCB2CB /* Utils.swift */,
 			);
@@ -204,6 +205,27 @@
 				C14D3AAD276F9CA9009599D2 /* Views */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		C1D47EB027742C0F00DBA3CA /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				C1D47EAE27741BF500DBA3CA /* AuthCoordinator.swift */,
+				C1D47EB227742CEA00DBA3CA /* Coodinator.swift */,
+				C1D47EB427742D1A00DBA3CA /* MainCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		C1D47EB127742C2500DBA3CA /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				C18F0E1F276828EF00FE8B75 /* AppDelegate.swift */,
+				C18F0E28276828F100FE8B75 /* Assets.xcassets */,
+				C18F0E2A276828F100FE8B75 /* LaunchScreen.storyboard */,
+				C18F0E2D276828F100FE8B75 /* Info.plist */,
+			);
+			path = Commons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,11 +351,13 @@
 				C19816A52768481E00BCB2CB /* BaseView.swift in Sources */,
 				C19816B5276863DD00BCB2CB /* UserService.swift in Sources */,
 				C14D3AA8276F7E61009599D2 /* AuthViewModel.swift in Sources */,
+				C1D47EAF27741BF500DBA3CA /* AuthCoordinator.swift in Sources */,
 				C18F0E20276828EF00FE8B75 /* AppDelegate.swift in Sources */,
-				C18F0E22276828EF00FE8B75 /* SceneDelegate.swift in Sources */,
+				C1D47EB327742CEA00DBA3CA /* Coodinator.swift in Sources */,
 				C19816BD27686D1F00BCB2CB /* HomeViewController.swift in Sources */,
 				C19816AA2768602400BCB2CB /* SplashViewController.swift in Sources */,
 				C19816B8276865BF00BCB2CB /* SignIn.swift in Sources */,
+				C1D47EB527742D1A00DBA3CA /* MainCoordinator.swift in Sources */,
 				C14D3AA4276DEE4B009599D2 /* Signup.swift in Sources */,
 				C1D47E8B2772076B00DBA3CA /* HomeViewModel.swift in Sources */,
 				C14D3AA6276F7DD7009599D2 /* AuthView.swift in Sources */,
@@ -482,7 +506,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9Y2YJ5DNS7;
-				INFOPLIST_FILE = "MVVM+Authentication/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/MVVM+Authentication/Commons/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -503,7 +527,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9Y2YJ5DNS7;
-				INFOPLIST_FILE = "MVVM+Authentication/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/MVVM+Authentication/Commons/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
