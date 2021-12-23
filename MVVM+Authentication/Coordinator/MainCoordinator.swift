@@ -25,6 +25,7 @@ class MainCoordinator: NSObject, Coordinator {
     func goToSigIn() {
         let vc = AuthViewController.instance()
         vc.coordinator = self
+        navigationController.removeFromParent()
         navigationController.pushViewController(vc, animated: true)
     }
     
