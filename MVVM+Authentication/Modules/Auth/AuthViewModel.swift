@@ -34,8 +34,6 @@ class AuthViewModel: BaseViewModel {
         self.userService = userService
         self.userDefaults = userDefaults
         super.init()
-        
-        
     }
     
     override func bind() {
@@ -51,25 +49,25 @@ class AuthViewModel: BaseViewModel {
             })
             .disposed(by: disposeBag)
         
-        
-        self.output.goToMain
+        self.input.tapLoginButton
             .asDriver(onErrorJustReturn: ())
             .drive(onNext: {
                 self.signIn(request: SignInRequest(
                     email: self.input.emailTextField.value,
                     password: self.input.passwordTextFiled.value
                 ))
-            }).disposed(by: disposeBag)
+            })
+            .disposed(by: disposeBag)
     }
     
     private func signIn(request: SignInRequest) {
         print(request)
         self.userService.signIn(request: request)
-            .subscribe { [weak self] response in
-                guard let self = self else { return }
-                UserDefaultsUtil.setUserToken(token: response.element?.accessToken)
+            .bind(onNext: { response in
+                print(response)
+                UserDefaultsUtil.setUserToken(token: response.accessToken)
                 self.output.goToMain.accept(())
-            }
+            })
             .disposed(by: disposeBag)
     }
 }

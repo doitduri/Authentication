@@ -35,7 +35,7 @@ class SplashViewConroller: BaseViewController {
          print("viewDidLoad 🎉")
          })
          */
-        
+        self.viewModel.input.viewDidLoad.onNext(())
     }
     
     override func bindViewModel() {
@@ -53,16 +53,15 @@ class SplashViewConroller: BaseViewController {
 
         self.viewModel.output.goToSignIn
             .debug()
-            .subscribe(onNext: { _ in
-                self.goToSignIn()
-            }).disposed(by: disposeBag)
+            .observe(on: MainScheduler.instance)
+            .bind(onNext: self.goToSignIn)
+            .disposed(by: disposeBag)
 
         self.viewModel.output.goToMain
             .debug()
-            .subscribe(onNext: { _ in
-                self.goToMain()
-            }).disposed(by: disposeBag)
-
+            .observe(on: MainScheduler.instance)
+            .bind(onNext: self.goToMain)
+            .disposed(by: disposeBag)
     }
     
     

@@ -32,8 +32,6 @@ class SplashViewModel: BaseViewModel {
         self.userService = userService
         super.init()
         
-        self.input.viewDidLoad
-            .onNext(self.hasToken())
     }
     
     func hasToken() {
@@ -45,7 +43,7 @@ class SplashViewModel: BaseViewModel {
                 .subscribe(onNext: { User in
                     self.output.goToMain.accept(())
                 }, onError: { Error in
-                    // showErrorAlert
+                    // TODO showErrorAlert
                     print(Error)
                 })
                 .disposed(by: disposeBag)

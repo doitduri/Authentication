@@ -32,22 +32,29 @@ class AuthViewController: BaseViewController {
     }
     
     override func bindViewModel() {
+        self.authView.emailField.rx.text
+            .orEmpty
+            .bind(to: self.viewModel.input.emailTextField)
+            .disposed(by: disposeBag)
         
+        self.authView.passwordField.rx.text
+            .orEmpty
+            .bind(to: self.viewModel.input.passwordTextFiled)
+            .disposed(by: disposeBag)
+    
         self.authView.loginButton.rx.tap
             .bind(to: self.viewModel.input.tapLoginButton)
             .disposed(by: disposeBag)
         
-        //        self.viewModel.output.goToMain
-        //            .asDriver(onErrorJustReturn: ())
-        //            .drive(onNext: self.goToMain)
-        //            .disposed(by: disposeBag)
+        self.viewModel.output.goToMain
+            .debug()
+            .observe(on: MainScheduler.instance)
+            .bind(onNext: self.goToMain)
+            .disposed(by: disposeBag)
     }
     
     private func goToMain() {
-        print("goToMain")
-        //        if let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
-        //            sceneDelegate.goToMain()
-        //        }
+        self.coordinator?.goToMain()
     }
     
 }
