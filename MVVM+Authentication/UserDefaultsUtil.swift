@@ -32,6 +32,11 @@ struct UserDefaultsUtil {
         self.instance.set(token, forKey: UserDefaultsUtil.KEY_TOKEN)
     }
     
+    func clear() {
+      self.instance.removeObject(forKey: UserDefaultsUtil.KEY_USER_ID)
+      self.instance.removeObject(forKey: UserDefaultsUtil.KEY_TOKEN)
+    }
+    
     static func setUserToken(token: String?) {
         
       UserDefaults.standard.set(token, forKey: UserDefaultsUtil.KEY_TOKEN)

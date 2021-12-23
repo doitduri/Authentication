@@ -27,6 +27,21 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func bindViewModel() {
+        self.homeView.logOutButton.rx.tap
+            .bind(to: self.viewModel.input.tapLogOutButton)
+            .disposed(by: disposeBag)
         
+        self.viewModel.output.goToSignin
+            .debug()
+            .observe(on: MainScheduler.instance)
+            .bind(onNext: self.goToSignIn)
+            .disposed(by: disposeBag)
+    }
+    
+    func goToSignIn() {
+        self.coordinator?.goToSigIn()
     }
 }
