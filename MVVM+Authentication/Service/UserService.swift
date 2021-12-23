@@ -11,7 +11,7 @@ import RxSwift
 protocol UserServiceProtocol{
     func signIn(request: SignInRequest) -> Observable<SignInResponse>
     func signup(request: SignupRequest) -> Observable<SignInResponse>
-    func fetchUserInfo() -> Observable<UserInfoResponse>
+    func fetchUserInfo() -> Observable<User>
 }
 
 struct UserSerivce: UserServiceProtocol {
@@ -55,9 +55,12 @@ struct UserSerivce: UserServiceProtocol {
             ).responseJSON { response in
                 switch response.result {
                 case .success(let value):
-                    let json = JsonUtils.toJson(of: SignInResponse.self, object: value)
                     
-                    obs.onNext(json!)
+                    guard let json = JsonUtils.toJson(of: SignInResponse.self, object: value) else {
+                        return
+                    }
+                    
+                    obs.onNext(json)
                     obs.onCompleted()
                 default:
                     return
@@ -68,12 +71,10 @@ struct UserSerivce: UserServiceProtocol {
         }
     }
 
-    func fetchUserInfo() -> Observable<UserInfoResponse> {
+    func fetchUserInfo() -> Observable<User> {
         return Observable.create { obs -> Disposable in
             let url = HTTPUtils.url + "/users/me"
             let headers = HTTPUtils.defaultHeader()
-            
-            print(headers)
             
             HTTPUtils.defaultSession.request(
                 url,
@@ -82,8 +83,7 @@ struct UserSerivce: UserServiceProtocol {
             ).responseJSON { response in
                 switch response.result {
                 case .success(let value):
-                    print(value)
-                    guard let json = JsonUtils.toJson(of: UserInfoResponse.self, object: value) else {
+                    guard let json = JsonUtils.toJson(of: User.self, object: value) else {
                         return
                     }
                     obs.onNext(json)

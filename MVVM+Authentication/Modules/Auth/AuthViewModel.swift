@@ -45,6 +45,13 @@ class AuthViewModel: BaseViewModel {
             })
             .disposed(by: disposeBag)
         
+        self.input.passwordTextFiled
+            .subscribe(onNext: {
+                print($0)
+            })
+            .disposed(by: disposeBag)
+        
+        
         self.output.goToMain
             .asDriver(onErrorJustReturn: ())
             .drive(onNext: {

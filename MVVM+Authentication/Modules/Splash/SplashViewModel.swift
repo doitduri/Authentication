@@ -33,34 +33,30 @@ class SplashViewModel: BaseViewModel {
         super.init()
         
         self.input.viewDidLoad
-            .onNext(self.validateToken())
+            .onNext(self.hasToken())
     }
     
-    func validateToken() {
+    func hasToken() {
         let token = self.userDefaults.getUserToken()
         
-        if self.validateTokenFromLocal(token: token) {
-            self.validateTokenFromServer()
+        if self.hasTokenFromLocal(token: token) {
+            // 토큰 있을 때 - 토큰 서버처리
+            self.userService.fetchUserInfo()
+                .subscribe(onNext: { User in
+                    self.output.goToMain.accept(())
+                }, onError: { Error in
+                    // showErrorAlert
+                    print(Error)
+                })
+                .disposed(by: disposeBag)
         } else {
             // 토큰 없을 떄
             self.output.goToSignIn.accept(())
         }
     }
     
-    func validateTokenFromLocal(token: String) -> Bool {
+    func hasTokenFromLocal(token: String) -> Bool {
         return !token.isEmpty
-    }
-    
-    private func validateTokenFromServer() {
-        // 토큰 있을 때 - 토큰 서버처리
-        self.userService.fetchUserInfo()
-            .do(onNext: { response in
-                print(response)
-            })
-            .map {_ in Void()}
-            .subscribe(
-                onNext: self.output.goToMain.accept(_:))
-            .disposed(by: disposeBag)
     }
     
 }

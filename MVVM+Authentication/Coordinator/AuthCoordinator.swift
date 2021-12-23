@@ -19,8 +19,10 @@ class AuthCoordinator: Coordinator {
 
     func start() {
         let vc = AuthViewController.instance()
-//        vc.coordinator = self
+        // vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
+    
+    // TODO 비밀번호 찾기 등등 할 때 페이지 선언
     
 }

@@ -29,17 +29,15 @@ struct UserDefaultsUtil {
     }
     
     func setUserToken(token: String) {
-        print("UserDefaultsUtil- setUserToken")
         self.instance.set(token, forKey: UserDefaultsUtil.KEY_TOKEN)
     }
     
     static func setUserToken(token: String?) {
-        print("UserDefaultsUtil- setUserToken")
+        
       UserDefaults.standard.set(token, forKey: UserDefaultsUtil.KEY_TOKEN)
     }
     
     static func getUserToken() -> String? {
-        print("UserDefaultsUtil- getUserToken")
       return UserDefaults.standard.string(forKey: UserDefaultsUtil.KEY_TOKEN)
     }
     

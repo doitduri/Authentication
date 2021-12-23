@@ -29,8 +29,6 @@ class SplashViewConroller: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.viewModel.input.viewDidLoad.onNext(())
-        
         /* RxViewController
          self.rx.viewDidLoad
          .subscribe(onNext: {
@@ -49,10 +47,10 @@ class SplashViewConroller: BaseViewController {
         
         self.viewModel.input.viewDidLoad
             .subscribe { _ in
-                self.viewModel.validateToken()
+                self.viewModel.hasToken()
             }
             .disposed(by: disposeBag)
-//
+
         self.viewModel.output.goToSignIn
             .debug()
             .subscribe(onNext: { _ in
@@ -60,9 +58,11 @@ class SplashViewConroller: BaseViewController {
             }).disposed(by: disposeBag)
 
         self.viewModel.output.goToMain
-            .asDriver(onErrorJustReturn: ())
-            .drive(onNext: self.goToMain)
-            .disposed(by: self.disposeBag)
+            .debug()
+            .subscribe(onNext: { _ in
+                self.goToMain()
+            }).disposed(by: disposeBag)
+
     }
     
     

@@ -23,4 +23,10 @@ class HomeViewController: BaseViewController {
     override func loadView() {
         self.view = self.homeView
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
+        
+    }
 }
